@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:klp4b_restaurantapp/screens/home.dart';
 
 class OrderList extends StatefulWidget {
   const OrderList({super.key});
@@ -249,8 +250,7 @@ class _OrderListState extends State<OrderList> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const OrderList()),
+                                        builder: (context) => const Home()),
                                   );
                                 },
                               ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:klp4b_restaurantapp/screens/main_page.dart';
+import 'package:klp4b_restaurantapp/screens/order_list.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -211,7 +211,7 @@ class _HomeState extends State<Home> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Home()),
+                                      builder: (context) => const OrderList()),
                                 );
                               },
                             ),
