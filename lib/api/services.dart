@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   static const String apiUrl =
-      'http://192.168.1.64:8000/api'; // Replace with your API endpoint
+      'http://192.168.43.22:8000/api'; // Replace with your API endpoint
 
   Future<List<Menu>> fetchMenuData(String? barcode) async {
     final fetchMenuUrl = '$apiUrl/menus/$barcode';
@@ -99,7 +99,7 @@ class Order {
   final String? tableName;
   final String? menuName;
   final int qty;
-  final String? menuPrice;
+  final String menuPrice;
   final String? status;
   final String? createdAt;
 
@@ -110,7 +110,7 @@ class Order {
     this.customerName,
     this.menuName,
     required this.qty,
-    this.menuPrice,
+    required this.menuPrice,
     this.tableName,
     this.status,
     this.createdAt,
