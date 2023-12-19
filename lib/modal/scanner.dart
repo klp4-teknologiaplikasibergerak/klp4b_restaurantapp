@@ -193,8 +193,9 @@ class _ScannerState extends State<Scanner> {
                         tableId: 1,
                         customerName: 'Zulfiqry',
                         qty: int.parse(QtyController.text))
-                    .then((value) =>
-                        updateState().then((value) => Navigator.pop(context)));
+                    .then((value) => updateState());
+
+                Navigator.pop(context);
               },
             ),
           ),

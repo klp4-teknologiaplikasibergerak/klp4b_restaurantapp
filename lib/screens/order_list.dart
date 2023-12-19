@@ -24,26 +24,99 @@ class _OrderListState extends State<OrderList> {
                 return ListTile(
                   title: Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Row(
+                    child: Column(
                       children: [
-                        const Text(
-                          'Nama Menu',
-                          style: TextStyle(
-                            color: Color(0xFF000000),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        Row(
+                          children: [
+                            const Text(
+                              'Nama Menu',
+                              style: TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              order.menuName ?? '',
+                              style: const TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(
-                          width: 10,
+                        Row(
+                          children: [
+                            const Text(
+                              'Jumlah',
+                              style: TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              order.qty.toString(),
+                              style: const TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text(
-                          order.menuName ?? '',
-                          style: const TextStyle(
-                            color: Color(0xFF000000),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        Row(
+                          children: [
+                            const Text(
+                              'Nama Meja',
+                              style: TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              order.tableName ?? '',
+                              style: const TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            const Text(
+                              'Nama Pemesan',
+                              style: TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              order.customerName ?? '',
+                              style: const TextStyle(
+                                color: Color(0xFF000000),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -51,7 +124,7 @@ class _OrderListState extends State<OrderList> {
                   subtitle: Row(
                     children: [
                       const Text(
-                        'Harga',
+                        'Total Harga',
                         style: TextStyle(
                           color: Color.fromARGB(255, 68, 75, 85),
                           fontSize: 14,
@@ -62,7 +135,7 @@ class _OrderListState extends State<OrderList> {
                         width: 10,
                       ),
                       Text(
-                        order.menuPrice ?? '',
+                        (int.parse(order.menuPrice) * order.qty).toString(),
                         style: const TextStyle(
                           color: Color(0xFF000000),
                           fontSize: 14,
